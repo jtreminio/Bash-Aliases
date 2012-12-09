@@ -59,6 +59,8 @@ alias chmod_folders='find -maxdepth 10 -type d -exec chmod 755 {} \;'
 
 alias apache_error='sudo tail -f  /var/log/apache2/error.log'
 
+alias regex='perl -pi -e'
+
 del_recursive() {
     find . | grep '$1' | xargs rm
 }
