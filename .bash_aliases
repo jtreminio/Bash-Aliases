@@ -59,7 +59,20 @@ alias chmod_folders='find -maxdepth 10 -type d -exec chmod 755 {} \;'
 
 alias apache_error='sudo tail -f  /var/log/apache2/error.log'
 
-alias regex='perl -pi -e'
+# perl -pi -e 's/foo/bar/gi' file.txt
+alias replace='perl -pi -e'
+
+alias clearscrollback='echo -e "\e[3J"'
+
+# Git - compact, colorized git log
+alias gl="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+# Git - Visualize git log
+alias lg='git log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"'
+# Git - show work done
+workdone(){
+    default="1 day ago"
+    git log --committer=moglenstar@gmail.com --pretty=format:"%Cgreen%ar (%h)%n%Creset> %s %b%n" --since="${1:-$default}" --no-merges
+}
 
 del_recursive() {
     find . | grep '$1' | xargs rm
@@ -95,3 +108,8 @@ function extract()    # Handy Extract Program.
      fi
 }
 
+# Golang variables
+export GOROOT=$HOME/go
+export PATH=$GOROOT/bin:$PATH
+export GOARCH=amd64
+export GOOS=linux
