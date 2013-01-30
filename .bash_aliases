@@ -103,8 +103,3 @@ function extract()    # Handy Extract Program.
      fi
 }
 
-# Golang variables
-export GOROOT=$HOME/go
-export PATH=$GOROOT/bin:$PATH
-export GOARCH=amd64
-export GOOS=linux
