@@ -1,0 +1,15 @@
+[user]
+	name = Juan Treminio
+	email = jtreminio@gmail.com
+[core]
+	filemode = false
+	excludesfile = ~/.gitignore_global
+
+[color]
+	ui = auto
+[alias]
+	st = status
+	co = checkout
+	ci = commit
+	br = branch
+	staged = diff --cached
