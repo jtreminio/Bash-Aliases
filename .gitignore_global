@@ -1,0 +1,11 @@
+.*.swp
+nbproject
+._*
+.DS_Store
+.settings
+.buildpath
+.project
+.idea
+*.sublime-workspace
+*.sublime-project
+composer.phar
