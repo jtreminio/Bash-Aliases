@@ -43,6 +43,10 @@ export PS1='\n\[$bold\]\[$black\][\[$dk_blue\]\@\[$black\]]-[\[$green\]\u\[$yell
 
 #PS1='\[\033[01;32m\]\n\u@\h\[\033[00m\] -> \[\033[01;34m\]\w\[\033[0;33m\]$(__vcs_name) \[\033[00m\]\n\$ '
 
+function deploy() {
+  sh "/home/jtreminio/deployscripts/$1.sh"
+}
+
 alias ls='ls -F --color=always'
 alias dir='dir -F --color=always'
 alias ll='ls -l'
