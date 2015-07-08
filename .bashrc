@@ -50,6 +50,8 @@ alias mv='mv -iv'
 alias grep='grep --color=auto -in'
 alias ..='cd ..'
 
+alias rm_dotunderscore='find . -type f -name "._*" -exec rm -rf {} \;'
+
 alias git="/usr/bin/git"
 # Git - compact, colorized git log
 alias gl="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
