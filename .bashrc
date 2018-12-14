@@ -1,6 +1,7 @@
-[ -r /etc/bash_completion ] && source /etc/bash_completion
-[ -r ~/.git-completion.bash ] && source ~/.git-completion.bash
-[ -r ~/.git-prompt.sh ] && source ~/.git-prompt.sh
+[ -r /etc/bashrc ] && source /etc/bashrc
+[ -r ~/.git-completion ] && source ~/.git-completion
+[ -r ~/.git-prompt ] && source ~/.git-prompt
+
 
 __has_parent_dir () {
     # Utility function so we can test for things like .git/.hg without firing
@@ -40,8 +41,11 @@ bold=$(tput -Txterm bold)
 reset=$(tput -Txterm sgr0)
 
 export PS1='\n\[$bold\]\[$black\][\[$dk_blue\]\@\[$black\]]-[\[$green\]\u\[$yellow\]@\[$green\]\h\[$black\]]-[\[$pink\]\w\[$black\]]\[\033[0;33m\]$(__vcs_name) \[\033[00m\]\[$reset\]\n\[$reset\]\$ '
+export QSG_RENDERER_LOOP="basic"
 
-alias ls='ls -F -G'
+LS_COLORS=$LS_COLORS:'di=0;35:' ; export LS_COLORS
+
+alias ls='ls -vFh --color --group-directories-first'
 alias dir='ls'
 alias ll='ls -l'
 alias cp='cp -iv'
@@ -49,10 +53,7 @@ alias rm='rm -i'
 alias mv='mv -iv'
 alias grep='grep --color=auto -in'
 alias ..='cd ..'
-# Pretty print JSON
-alias json='python -m json.tool'
-
-alias rm_dotunderscore='find . -type f -name "._*" -exec rm -rf {} \;'
+alias ccat='highlight -O ansi --force'
 
 alias git="/usr/bin/git"
 # Git - compact, colorized git log
@@ -81,3 +82,4 @@ function extract()    # Handy Extract Program.
          echo "'$1' is not a valid file"
      fi
 }
+

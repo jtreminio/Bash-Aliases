@@ -11,9 +11,5 @@ nbproject
 composer.phar
 codeCoverage
 
-mobile/ios/*/Podfile.lock
-mobile/ios/*/Pods/
-mobile/ios/*/*.xcodeproj/project.xcworkspace/
-mobile/ios/*/*.xcodeproj/xcuserdata/
-mobile/ios/*/*.xcworkspace/
-site/bin/phpunit
+nonversioned
+
